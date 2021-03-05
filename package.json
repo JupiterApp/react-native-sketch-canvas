@@ -21,5 +21,16 @@
     "canvas"
   ],
   "nativePackage": true,
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-preset-react-native": "^4.0.1",
+    "eslint": "^7.21.0",
+    "eslint-config-semistandard-react": "^4.2.0",
+    "eslint-plugin-semistandard-react": "^4.1.0"
+  }
 }
