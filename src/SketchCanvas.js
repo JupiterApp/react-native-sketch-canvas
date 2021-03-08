@@ -231,7 +231,7 @@ class SketchCanvas extends React.Component {
 
         if (this._path) {
           const x = parseFloat((gestureState.x0 + gestureState.dx / this.props.scale - this._offset.x).toFixed(2));
-				  const y = parseFloat((gestureState.y0 + gestureState.dy / this.props.scale - this._offset.y).toFixed(2));
+          const y = parseFloat((gestureState.y0 + gestureState.dy / this.props.scale - this._offset.y).toFixed(2));
 
           UIManager.dispatchViewManagerCommand(this._handle, UIManager.getViewManagerConfig(RNSketchCanvas).Commands.addPoint, [
             parseFloat(x * this._screenScale),
@@ -242,8 +242,6 @@ class SketchCanvas extends React.Component {
         }
       },
       onPanResponderRelease: (evt, gestureState) => {
-        if (this.props.requiredTouches && gestureState.numberActiveTouches !== this.props.requiredTouches) return;
-
         if (this._path) {
           this.props.onStrokeEnd({ path: this._path, size: this._size, drawer: this.props.user });
           this._paths.push({ path: this._path, size: this._size, drawer: this.props.user });
